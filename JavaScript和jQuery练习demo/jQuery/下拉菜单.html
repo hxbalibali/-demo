@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.wrap {
+			width: 330px;
+			height: 30px;
+			margin: 100px auto 0;
+			background-image: url(images/bg.jpg);
+			padding-left: 10px;
+		}
+		.wrap li {
+			background-image: url(images/libg.jpg);
+		}
+
+		.wrap > ul > li{
+			float: left;
+			margin-right: 10px;
+			position: relative;
+		}
+
+		.wrap a {
+			display: block;
+			height: 30px;
+			width: 100px;
+			text-decoration: none;
+			color: #000;
+			line-height: 30px;
+			text-align: center;
+		}
+
+		.wrap li ul {
+			position: absolute;
+			top: 30px;
+			display: none;
+		}
+	</style>
+	<script src=jquery-1.12.1.js></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".wrap>ul>li").mouseenter(function(){
+				$(this).children("ul").stop().show(200);//200毫秒
+			});
+
+			$(".wrap>ul>li").mouseleave(function(){
+				$(this).children("ul").stop().hide(200);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li>
+				<a href="javascript:void(0);">男</a>
+				<ul>
+					<li><a href="javascript:void(0);">男1</a></li>
+					<li><a href="javascript:void(0);">男2</a></li>
+					<li><a href="javascript:void(0);">男3</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);">女</a>
+				<ul>
+					<li><a href="javascript:void(0);">女1</a></li>
+					<li><a href="javascript:void(0);">女2</a></li>
+					<li><a href="javascript:void(0);">女3</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);">人妖</a>
+				<ul>
+					<li><a href="javascript:void(0);">人妖1</a></li>
+					<li><a href="javascript:void(0);">人妖2</a></li>
+					<li><a href="javascript:void(0);">人妖3</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

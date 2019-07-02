@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<style type="text/css">
+	@font-face {  /*声明字体  引用字体*/
+	  		font-family: "icomoon";  /*我们自己起名字可以*/
+	  		src: url('../fonts/icomoon.eot?7kkyc2');
+	  		src: url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+	   		url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),
+	    	url('../fonts/icomoon.woff?7kkyc2') format('woff'),
+	    	url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+	  		font-style: normal;  /*倾斜字体正常*/
+}
+		div	{
+			width: 200px;
+			height: 30px;
+			border: 1px solid #ccc;
+			font-family: "icomoon";
+			position: relative;
+		}
+
+		div::before {/*before相当于一个能插入元素的选择器*/
+			content: "\ea51";
+			position: absolute;
+			top: 5px;
+			right: 10px;
+		}
+		div:hover {
+			border:1px solid red;
+			color: red;/*此刻before相当于div的孩子*/
+		}
+	</style>
+</head>
+<body>
+	<div>		
+	</div>
+</body>
+</html>

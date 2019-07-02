@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>路由的使用</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+	<script src="./lib/vue-router-3.0.1.js"></script>
+	<!-- 步骤 
+	1、导入vue-router组件类库
+	2、使用router-link组件来导航
+	3、使用router-view组件来显示匹配到的组件
+	4、使用Vue.extend创建组件
+	5、创建一个路由router实例，通过routers属性来定义路由匹配规则
+	6、使用router属性来使用路由规则
+	-->
+</head>
+<body>
+	<div id="app">
+		<router-link to="/login">登录</router-link>
+		<router-link to="/register">注册</router-link>
+		<router-view></router-view>
+	</div>
+	<script>
+		var login = {
+			template: '<h1>登录组件</h1>'
+		}
+		var register = {
+			template: '<h1>注册组件</h1>'
+		}
+		var router = new VueRouter({
+			routes: [
+				{ path: '/login', component: login},
+				{ path: '/register', component: register}
+			]
+		})
+
+		var vm = new Vue({
+			el: "#app",
+			data: {
+
+			},
+			methods:{
+
+			},
+			router: router
+
+		})
+	</script>
+	
+</body>
+</html>

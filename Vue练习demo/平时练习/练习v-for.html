@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-for</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+	<!-- 1、迭代数组(普通数组+对象数组)  2、迭代对象 3、迭代数字-->
+	<!-- key属性的使用，只能number或者string -->
+	<div id="app">
+		<p>{{ list[0] }}</p>
+		<p>{{ msg }}</p>
+
+		<p v-for="(item, i) in list">索引值是：{{ i }}--------每一项是{{ item }}</p>
+		<p v-for="(item, i) in list1">{{ item }}----{{i}}---id：{{ item.id }}---name：{{ item.name}}</p><!-- 遍历对象数组，每个item是一个对象 -->
+
+		<!-- 遍历对象，第一个位置是值，第二个位置是键，第三个位置是索引 -->
+		<p v-for="(item, key, i) in user">{{item}}--{{key}}---{{i}}</p>
+		<!-- 迭代数字从1开始 -->
+		<p v-for="count in 10">这是第{{ count }}次循环</p>
+		<div>
+			<label>Id: <input type="text" v-model="id"></label>
+			<label>Name: <input type="text" v-model="name"></label>
+			<input type="button" value="添加" @click="add">
+		</div>
+		<!-- 属性key的使用 -->
+		<p v-for="item in list1" :key="item.id">{{ item.id }}----{{item.name}}</p>
+	</div>
+
+	<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				list: [1, 2, 3, 4],
+				msg: 'hshshh',
+				list1: [
+					{id: 1, name: 'hx1'},
+					{id: 2, name: 'hx2'},
+					{id: 3, name: 'hx3'}
+				],
+				user: {
+					id: 1,
+					name: 'zhaohuan',
+					gender: '男'
+				},
+				id: '',
+				name: ''
+			},
+			methods: {
+				add(){
+					this.list1.unshift({id: this.id, name: this.name})
+				}
+			}
+		});
+	</script>
+</body>
+</html>

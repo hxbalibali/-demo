@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>哈根达斯</title>
+	<style type="text/css">
+		div {
+			width: 310px;
+			height: 190px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+			padding: 10px;/*这样子会撑开盒子*/
+			position: relative;
+		}
+		/*用浮动是走不过内边距的*/
+		.top {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.bottom {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="top_tu.gif" class="top">
+		<img src="adv.jpg">
+		<img src="br.gif" class="bottom">
+	</div>
+</body>
+</html>

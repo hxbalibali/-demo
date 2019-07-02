@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.wrapper {
+			width: 1000px;
+			height: 475px;
+
+			margin: 100px auto 0;
+		}
+
+		.tab {
+			border: 1px solid #ddd;
+			height: 36px;
+			width: 320px;
+			border-bottom: 0;
+		}
+
+		.tab-item {
+			float: left;
+			width: 80px;
+			height: 34px;
+			line-height: 34px;
+			text-align: center;
+			cursor: pointer;
+			position: relative;
+
+			border-top: 4px solid #fff;
+		}
+
+		.tab span {
+			width: 1px;
+			height: 14px;
+			background-color: #ddd;
+			position: absolute;
+			top: 10px;
+			right: 0;
+		}
+
+		.products {
+			width: 1002px;
+			border: 1px solid #ddd;
+			height: 476px;
+		}
+		.products .main {
+			float: left;
+			display: none;
+		}
+
+        .products .main.selected {
+        	display: block;
+        }
+
+        .tab li.active {
+        	border-color: red;     	
+        }
+	</style>
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		//页面加载事件
+		$(function(){
+			//获取所有的li标签，添加鼠标进入样式
+			$(".tab>li").mouseenter(function(){
+				//设置此时鼠标进入的li添加样式，并移除兄弟li的样式
+				$(this).addClass("active").siblings("li").removeClass("active");
+			});
+
+			//设置此时鼠标li进入对应的div的变化，用索引
+			var index = $(this).index();
+			console.log("hhhh"+index);
+			///////???????这边索引打印出来为什么不奏效？
+			$(".products>div:eq("+index+")").addClass("selected").siblings("div").removeClass("selected");
+
+		});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<ul class="tab">
+			<li class="tab-item active">国际大牌<span></span></li>
+			<li class="tab-item">国妆名牌<span></span></li>
+			<li class="tab-item">清洁用品<span></span></li>
+			<li class="tab-item">男士精品</li>
+		</ul>
+
+		<div class="products">
+			<div class="main selected">
+				<a href="#"><img src="images/guojidapai.jpg"></a>
+			</div>
+			<div class="main">
+				<a href="#"><img src="images/guozhuangmingpin.jpg"></a>
+			</div>
+			<div class="main">
+				<a href="#"><img src="images/qingjieyongpin.jpg"></a>
+			</div>
+			<div class="main">
+				<a href="#"><img src="images/nanshijingpin.jpg"></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

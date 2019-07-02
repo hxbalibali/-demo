@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		// 	$("#uu>li").mouseenter(function(){
+		// 		$(this).css("backgroundColor", "red");
+		// 	});
+		// 	$("#uu>li").mouseleave(function(){
+		// 		$(this).css("backgroundColor", "");
+		// 	});
+		// });
+
+
+//链式编程
+		$("#uu>li").mouseenter(function(){
+		 		$(this).css("backgroundColor", "red");
+		 	}).mouseleave(function(){
+				$(this).css("backgroundColor", "");
+		 	});
+		 });
+	</script>
+</head>
+<body>
+	<ul id="uu">
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+		<li>1</li>
+	</ul>
+</body>
+</html>

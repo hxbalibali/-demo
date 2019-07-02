@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选择器</title>
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		//页面加载事件
+		$(function(){
+			$("#btn").click(function(){
+				// this.value = "jjjjjjj";
+				// $(this).val("jjjjjjj");
+				// $("p").text("wommmmmmmmm");
+
+				// $("#dv span").css("backgroundColor", "red");
+
+				$("#dv>span").css("backgroundColor", "red");
+
+				// $("#dv~span").css("backgroundColor", "red");
+
+
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+	<p>hhhhhhhhh</p>
+<div id="dv">
+	<span>这是第一个span</span>
+	<ul>
+		<li>第一个li</li>
+		<li>第二个li
+			<span>第二个li中的span</span>
+			<span>第二个li中的span</span>
+		</li>
+		<li>第三个li</li>
+	</ul>
+	<span>这是第二个span</span>
+	<span>这是第三个span</span>
+</div>
+<p>这是p</p>
+<span>这是div后面的兄弟元素span</span>
+<span>这是div后面的兄弟元素span</span>
+<span>这是div后面的兄弟元素span</span>
+
+</body>
+</html>

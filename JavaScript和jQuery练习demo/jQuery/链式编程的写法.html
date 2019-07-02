@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#btn").click(function(){
+				$("p").text("这是一个p").css({"font-size":"26px", "font-family":"微软雅黑"}).mouseenter(function(){
+					$(this).css("backgroundColor", "pink");
+				}).mouseleave(function(){
+					$(this).css("backgroundColor", "green");
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+	<p>dddddddddddddddddddddddd</p>
+</body>
+</html>

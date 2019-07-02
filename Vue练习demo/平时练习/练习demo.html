@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue练习demo</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+	<style type="text/css">
+		.inner {
+			height: 150px;
+			width: 200px;
+			background-color: pink;
+		}
+		.outer {
+
+		}
+	</style>
+</head>
+<body>
+	<!-- 1、基本使用 -->
+	<!-- v-cloak解决插值表达式闪烁的问题 -->
+	<!-- v-text   v-html -->
+	<!-- v-bind 绑定属性 简写 : ，是单向绑定，从M到V-->
+	<!-- v-on 绑定事件 简写 @ -->
+	<!-- 跑马灯事例 -->
+	<!-- v-model 表单元素 数据双向绑定 -->
+	<div id="app">
+		<p v-cloak>{{ msg }}</p>
+		<p>hahhah {{ msg1 }}</p><!-- 插值表达式，只会原样替换自己的这个占位符，不会覆盖标签中原有的其他内容 -->
+		<p v-text="msg1">hahhah</p><!-- v-text会覆盖标签中原有的其他内容，并且v-text没有闪烁问题 -->
+		<p v-html="msg1"></p>
+
+		<input type="button" value="点我" v-bind:title="mytitle"> <!-- 如果没有v-bind，这里mytitle将会是title属性的属性值，直接输出 -->
+		<br/>
+		<input type="button" value="点我弹出消息" v-on:click="show">
+		<br/>
+		<!-- 跑马灯 1、substring 2、定时器(这里就不做了) -->
+		<input type="button" value="动起来" @click="start">
+		<input type="button" value="停" @click="stop">
+		<h1>{{ msg2 }}</h1>
+
+
+		<!-- 事件修饰符 -->
+		<!-- .stop阻止冒泡 -->
+		<div class="inner" @click="divHandler">
+			<input type="button" value="点我" @click.stop="btnHandler">
+		</div>
+		<!-- .prevent 阻止默认事件 -->
+		<a href="http://www.baidu.com" @click.prevent="linkClick">去百度</a>
+		<!-- .capture 实现捕获触发事件的机制，注意：捕获是从外向里 -->
+		<div class="inner" @click.capture="divHandler">
+			<input type="button" value="戳他" @click="btnHandler">
+		</div>
+		<!-- .self 实现只有点击当前元素的时候，才会触发事件处理机制 -->
+		<div class="inner" @click.self="divHandler">
+			<input type="button" value="戳他" @click="btnHandler">
+		</div>
+		<!-- .once 只触发一次事件处理函数，就是说.once前面的事件只处理一次 -->
+		<a href="http://www.baidu.com" @click.prevent.once="linkClick">去百度</a>
+		<div class="outer"></div>
+
+		<!-- v-model -->
+		<input type="text" style="width: 100%;" v-model="msg3">
+	</div>
+	<script type="text/javascript">
+		// 在vm实例二中，如果想要获取data上的数据，或者是想要调用methods中的方法，必须通过this
+		var vm = new Vue({
+			el: '#app',
+			data: {
+				msg: 'welcome',
+				msg1: '<h1>hellohellohellohellohello</h1>',
+				mytitle: '我是按钮',
+				msg2: 'zhuanzhuanzhuan',
+				msg3: 'hahhahahhahhahah'
+				
+			},
+			methods: {
+				show: function(){
+					alert('hello');
+				},
+				start: function(){
+
+					var first = this.msg2.substring(0, 1);
+					var last = this.msg2.substring(1);
+					this.msg2 = last + first;
+				},
+				stop: function(){
+					alert("ss");
+				},
+				divHandler: function(){
+					console.log("这是触发了外边div的点击事件");
+				},
+				btnHandler: function(){
+					console.log("这是触发了btn按钮的点击事件");
+				},
+				linkClick: function(){
+					console.log("这是触发了链接的点击事件");
+				}
+			}
+		});
+	</script>
+</body>
+</html>

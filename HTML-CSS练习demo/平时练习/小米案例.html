@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<style type="text/css">
+		div {
+			width: 632px;
+			height: 340px;
+			position: relative;
+
+			border-radius: 10px;
+			overflow: hidden;
+		}
+
+	
+
+		div:hover::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			
+			top: 0;
+			left: 0;
+			border: 3px solid rgba(0, 0, 0, 0.5);
+			box-sizing: border-box;/*css3盒模型，内减模式*/
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="images/mi.jpg">
+	</div>
+</body>
+</html>

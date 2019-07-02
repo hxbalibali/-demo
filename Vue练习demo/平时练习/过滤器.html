@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>过滤器(私有+全局)</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 过滤器可以传参数，也可以不传参 -->
+		<!-- <p>{{ msg | msgFormat }}</p> -->
+		<p>{{ msg | msgFormat('yyyyy','hhhh','eeeee') }}</p>
+		<p>{{ msg | msgFormat1 }}</p>
+	</div>
+	<!-- <div id="app1">
+		<p>{{ msg | msgFormat1 }}</p>
+	</div> -->
+
+	<script>
+		// 定义一个全局过滤器
+		Vue.filter('msgFormat', function(msg, arg1, arg2, arg3){
+			// return msg.replace("h","oooo");
+			// return msg.replace(/h/g,"oooo");
+			return msg.replace("h", arg1 + arg2 + arg3);
+
+		})
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				msg: 'zhuanhx'
+			},
+			//定义私有过滤器
+			filters: {
+				msgFormat1: function(data){
+					return data.replace("h", "私有")
+				}
+			}
+		})
+
+		// var vm1 = new Vue({
+		// 	el: "#app1",
+		// 	data: {
+		// 		msg: 'hhhhhhhhhhh'
+		// 	}
+		// })
+	</script>
+</body>
+</html>

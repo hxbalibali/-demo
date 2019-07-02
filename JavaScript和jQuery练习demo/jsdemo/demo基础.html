@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	
+</head>
+<body>
+	<script>
+		console.log(0.04 * 100);
+		console.log(0.1 + 0.3);
+		console.log(Number.MIN_VALUE);
+		console.log(isNaN(NaN));
+		console.log('我是一个"正直"的人');
+		var str = "思念";
+		console.log(str.length);
+		console.log("100" + 100);
+		console.log(typeof(str));
+		var num = 12;
+		console.log(typeof num);
+		console.log(num.toString());
+		//有些值没有toString()，这个时候可以使用String()。
+		//console.log(undefined.toString());
+		console.log(String(undefined));
+		console.log(typeof num.toString());
+		console.log("/////////////");
+		console.log(Boolean(0));
+		console.log(Boolean(null));
+		console.log("/////////////");
+		var num1 = 5;
+		var num2 = 6;
+		console.log(num1 + num2++);//11
+		console.log(num1 + ++num2);//13?写在console里面也会影响赋值
+		console.log("/////////////");
+		var result = "55" == 55;
+		console.log(result);//true
+		console.log("55" === 55);//false
+		console.log("55" !== 55);
+
+		console.log("人" != "阿凡达");
+
+		num = 10;
+		console.log(5 == num / 2);
+		console.log("/////////////");
+		var a = !!'123';
+		console.log(a);//true
+
+		var i = 1;
+		var sum = 0;
+		while(i <= 100){
+			sum += i;
+			i++;
+		}
+		console.log(sum);
+		console.log("/////////////");
+		var arr1 = [];
+		console.log(typeof arr1);//object
+		var arr2 = ["a", 2];
+		console.log(arr2);
+		console.log(arr2.length);
+		arr2.length = 1;
+		console.log(arr2); //通过设置数组的长度来自动截断
+		var arr3 = ["1", "a"];
+		console.log(arr3);
+		arr3[0] = "b";
+		console.log(arr3);
+		arr3[4] = "ff";
+		console.log(arr3);//会扩张长度
+
+		console.log("/////////////");
+		function fn(){
+
+		}
+		console.log(typeof fn);
+
+		// var a = 25;
+		// function abc(){
+		// 	alert(a);
+		// 	var a = 10;
+		// }
+		// abc();
+		// console.log("a = " + a);
+
+		function ffff(){
+			console.log("sssadf");
+		}
+		// var a = 25;
+		
+		console.log(ffff);
+
+		console.log("/////////////////////////////");
+		var o = {
+			name: "sssss",
+			age: 18,
+			sex: true,
+			sayHi: function (){
+				console.log("hello");
+			}
+		};
+
+
+		var person = new Object();
+		person.name = "ddfgsee";
+		person.sayHi = function(){
+			console.log("sad");
+		};
+	</script>
+</body>
+</html>

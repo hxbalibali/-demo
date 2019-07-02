@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>生命周期</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+
+	<div id="app">
+		<input type="button" value="修改msg" @click="msg='No';">
+		<h3 id="h3">{{ msg }}</h3>
+	</div>
+	<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				msg: 'ok'
+			},
+			methods: {
+				show(){
+					console.log("hhh");
+				}
+			},
+			//生命周期函数
+			beforeCreate(){
+				console.log(this.msg); //undefined
+				// this.show(); 
+			},
+			created() {
+				console.log(this.msg);
+				this.show(); 
+			},//此时data 和 methods 都已经被初始化好了！
+			beforeMount(){
+				console.log(document.getElementById("h3").innerText);
+			},// 模板尚未渲染到页面
+			mounted(){
+				console.log("mounted"+document.getElementById("h3").innerText);
+			},
+			beforeUpdate(){
+
+			},
+			updated(){
+				
+			}
+		})
+	</script>
+</body>
+</html>

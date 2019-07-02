@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>样式（两种）</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+	<style type="text/css">
+		.red {
+			color: red;
+		}
+		.thin {
+			font-weight: 200;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<h1 class="red thin">this is a big h1</h1>
+		<!-- 使用vue中的class样式，用 v-bind 和 数组 -->
+		<h1 :class="['red', 'thin']">this is a big h1</h1>
+		<!-- 数组中也可以使用三元表达式 -->
+		<!-- 适用对象，由于对象的属性可带引号，也可不带 -->
+		<h1 :class="classObj">this is a big h1</h1>
+
+		<!-- 使用内联样式 -->
+		<h2 :style="{color: 'red', 'font-size': '40px'}">啧啧</h2>
+	</div>
+
+
+	<script>
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				classObj: {red: true, thin: true}
+			}
+		});
+	</script>
+</body>
+</html>

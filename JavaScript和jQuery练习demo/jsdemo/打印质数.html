@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>print 质数</title>
+</head>
+<body>
+	<!-- 思路：循环遍历2到100，是否能整除范围里的数 -->
+	<script type="text/javascript">
+		for(var i = 2; i < 100; i++){
+			var flag = true;
+			for (var j = 2; j < i; j++) {
+				if(i % j == 0){
+					flag = false;
+					break;
+				}
+			}
+			if(flag){
+				console.log(i);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>阻止超链接跳转</title>
+
+</head>
+<body>
+	<a href="http://www.baidu.com" id="ak">百度</a>
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		//阻止超链接默认的跳转：return false;
+		my$("ak").onclick = function (){
+			alert("hhh");
+			return false;
+		}
+	</script>
+</body>
+</html>

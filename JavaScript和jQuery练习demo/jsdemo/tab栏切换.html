@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tab栏切换</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+		.box {
+			width: 400px;
+			height: 300px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+		}
+
+		.hd {
+			height: 45px;
+			line-height: 45px;
+		}
+		.hd span {
+			display: inline-block;
+			width: 92px;
+			background-color: pink;
+			text-align: center;
+			cursor: pointer;
+		}
+		.hd span.current {
+			background-color: purple;
+		}
+
+		.bd li {
+			height: 255px;
+			background-color: purple;
+			display: none;
+		}
+		.bd li.current {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="hd">
+			<span class="current">体育</span>
+			<span>娱乐</span>
+			<span>新闻</span>
+			<span>综合</span>
+		</div>
+		<div class="bd">
+			<ul>
+				<li class="current">我是体育模块</li>
+      			<li>我是娱乐模块</li>
+      			<li>我是新闻模块</li>
+      			<li>我是综合模块</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="common.js"></script>
+	<script type="text/javascript">
+		// 获取元素
+		var box = my$("box");
+		var hd = box.getElementsByTagName("div")[0];
+		var bd = box.getElementsByTagName("div")[1];
+		var spans = hd.getElementsByTagName("span");
+		var list = bd.getElementsByTagName("li");
+		//循环遍历，添加点击事件
+		for (var i = 0; i < spans.length; i++) {
+			// 在点击之前，就把所有的索引保存在span标签中
+			spans[i].setAttribute("index", i);
+			spans[i].onclick = function () {
+				//做两件事情
+				//第一件事情：所有的span的类样式全部移除
+				for (var j = 0; j < spans.length; j++) {
+					spans[j].removeAttribute("class"); 
+				}
+				//第二件事情，当前被点击的span应用类样式；并获取索引
+				this.className = "current";
+				var num = this.getAttribute("index");
+
+				//对li进行索引操作
+				for (var i = 0; i < list.length; i++) {
+					list[i].removeAttribute("class");
+				}
+				list[num].className = "current";
+			};
+		}
+	</script>
+</body>
+</html>

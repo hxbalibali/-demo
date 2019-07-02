@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+</head>
+<body>
+	<input type="button" name="" value="关灯" id="btn">
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		/*
+			表单标签DOM操作中设置和获取value属性的值------>对象.value
+		*/
+		$("#btn").click(function(){
+			//此处的this是当前的按钮DOM对象
+			if($(this).val() == "关灯"){
+				$("body").css("backgroundColor", "black");
+				$(this).val("开灯");
+			}else{
+				$("body").css("backgroundColor", "");
+				$(this).val("关灯");
+			}
+		});
+	</script>
+</body>
+</html>

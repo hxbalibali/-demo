@@ -1,0 +1,27 @@
+/*
+* @Author: hx
+* @Date:   2019-05-04 09:34:47
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #050505;
+}
+button {
+	cursor: pointer;  /*对于按钮，放上去是小手，单独写*/
+}
+
+img {
+	border: 0;
+	vertical-align: middle; /*图片与文字中线对齐*/
+}

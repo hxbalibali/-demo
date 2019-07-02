@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>组件</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+	<div id="app">
+		<mycom1></mycom1>
+		<mycom2></mycom2>
+		<mycom3></mycom3>
+		<mycom4></mycom4>
+		<!-- <mycom5></mycom5> -->
+	</div>
+
+	<div id="app2">
+		<mycom4></mycom4>
+		<mycom5></mycom5>
+	</div>
+
+	<template id="tmp1">
+		<div>
+			<h1>全局组件</h1>
+			<span>hahhah</span>
+		</div>
+	</template>
+
+	<template id="tmp2">
+		<div>
+			<h1>私有组件</h1>
+			<span>hehheheh</span>
+		</div>
+	</template>
+	<script>
+		//1、使用Vue.extend配合Vue.component方法
+		//注意，模板template只有一个根元素
+		var com1 = Vue.extend({
+			template: '<h3>这是使用Vue.extend创建的组件</h3>'
+		});
+		Vue.component('mycom1', com1);
+		//2、直接使用Vue.component方法
+		Vue.component('mycom2', Vue.extend({
+			template:'<h1>hahahah</h1>'
+		}));
+		//这里另一种写法是省略Vue.extend,更简单
+		Vue.component('mycom3', { template: '<h1>hahahah</h1>'});
+
+		Vue.component('mycom4', {
+			template: '#tmp1'
+		});
+		var vm = new Vue({
+			el:"#app",
+			data:{
+
+			},
+			methods:{
+
+			}
+		})
+
+		var vm2 = new Vue({
+			el: "#app2",
+			data:{},
+			methods:{
+
+			},
+			components: {
+				mycom5: {
+					template: '#tmp2'
+				}
+			}
+
+		});
+	</script>
+</body>
+</html>

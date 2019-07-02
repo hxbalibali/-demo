@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<style type="text/css">
+		a {
+			display: block;
+			height: 252px;
+			width: 448px;
+			position: relative;
+		}
+		.mask {
+			width: 100%;
+			height: 100%;
+			/*颜色和背景图片可以连着写*/
+			background: rgba(0, 0, 0, .4) url(images/arr.png) no-repeat center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+
+		/*鼠标经过a，a里面的mask才会出来，这边用后代选择器*/
+		a:hover .mask {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<a href="#">
+		<img src="images/tudou.jpg">
+		<div class="mask"></div>
+	</a>
+</body>
+</html>

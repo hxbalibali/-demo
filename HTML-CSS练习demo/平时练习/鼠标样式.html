@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cursor+outline+resize+vertical-align</title>
+	<style type="text/css">
+		li {
+			cursor: pointer;
+		}
+
+		p {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			cursor: move;/*鼠标变成拖拽的样子*/
+		}
+
+		input {
+			outline: none;/*取消轮廓线的做法  或者 outline : 0*/
+			border: 1px solid red;/*由于不同浏览器颜色不一样，所以上来我们就默认给一个颜色*/
+		}
+
+		textarea {
+			/*防止拖拽文本域*/
+			resize: none;
+
+			outline: 0;
+		}
+
+		/*vertical-align通常是用来控制图片、表单与文字的对齐*/
+		/*和行内块搭配使用  img  input*/
+		/*图片对齐方式*/
+		img {
+			/*这两种方式是为了解决图片下面有空隙*/
+			/*vertical-align: bottom;*/
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>文字效果</li>
+		<li>文字效果</li>
+		<li>文字效果</li>
+		<li>文字效果</li>
+		<li>文字效果</li>
+		<li>文字效果</li>
+		<li>文字效果</li>
+		<li>文字效果</li>
+		<li>文字效果</li>
+		<li>文字效果</li>		
+	</ul>
+	<p></p>
+
+	<input type="text" name="">
+
+	<textarea></textarea>
+
+<!-- 图片默认是跟基线baseline对齐 -->
+	<img src="images/tudou.jpg">my name is 韩雪
+</body>
+</html>

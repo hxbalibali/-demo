@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#btn").click(function(){
+				if(/[\u4e00-\u9fa5]/.test($("#txt").val())){
+					$("#txt").css("backgroundColor", "red");
+				}else{
+					$("#txt").css("backgroundColor", "green");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	请输入中文名字：<input type="text" name="" id="txt"/></br>
+	<input type="button" name="" value="验证" id="btn">
+</body>
+</html>

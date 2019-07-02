@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<style type="text/css">
+		.cls {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+		.cls2{
+			border: 1px solid red;
+		}
+	</style>
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		//页面的加载事件
+		$(function(){
+			//点击按钮，设置样式
+			$("#btn").click(function(){
+			// $("#dv").addClass("cls");
+			// $("div").addClass("cls").addClass("cls2");
+			$("#dv").addClass("cls cls2");
+
+			});
+
+			//点击按钮，移除类样式
+			$("#btn2").click(function(){
+				$("#dv").removeClass("cls cls2");
+			});
+
+
+			//点击按钮判断div是否应用了这个类样式
+			$("#btn3").click(function(){
+				if($("#dv").hasClass("cls")){
+					console.log("yingyongle");
+				}else{
+					console.log("meiyou");
+				}
+			});
+		});	
+	</script>
+</head>
+<body>
+	<input type="button" name="" id="btn" value="显示样式">
+	<input type="button" name="" id="btn2" value="显示样式">
+	<input type="button" name="" id="btn3" value="显示样式">
+	<div id="dv">hanxue</div>
+</body>
+</html>

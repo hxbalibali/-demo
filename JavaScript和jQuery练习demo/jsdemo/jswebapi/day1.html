@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web api</title>
+</head>
+<body>
+	<!-- <div>
+		ddddd
+	</div>
+	<input type="button" value="弹框" onclick="alert('fffffffffffff')" /> -->
+	<!-- <input type="button" name="" value="dom按钮" id="btn"/> -->
+	<!-- <input type="button" name="" value="dom按钮2" id="btn2"/>
+	<input type="button" value="html 按钮" onclick="fn()" />
+
+	<p id="p1">我是一个p</p> -->
+
+<!-- 	<div id="dv">
+		<p>12345667</p>
+		<p>12345667</p>
+		<p>12345667</p>
+		<p>12345667</p>
+		<p>12345667</p>
+	</div>
+
+	<img src="图片库/images/2.jpg" alt="hhh" title="ggg" width="300" height="200"><br/>
+
+	<input type="text" name="" value=""><br/>
+	<input type="text" name="" value=""><br/>
+	<input type="text" name="" value=""><br/>
+	<input type="text" name="" value=""><br/>
+	<input type="text" name="" value=""><br/> -->
+
+	<input type="button" name="" value="zhhhhhhh">
+	<input type="button" name="" value="zhhhhhhh">
+	<input type="button" name="" value="zhhhhhhh">
+	<input type="button" name="" value="zhhhhhhh">
+	<input type="button" name="" value="zhhhhhhh">
+
+	<script>
+		var btnObjs = document.getElementsByTagName("input");
+
+		for (var i = 0; i < btnObjs.length; i++) {
+			btnObjs[i].onclick = function () {
+				for (var j = 0; j < btnObjs.length; j++) {
+					btnObjs[j].value= "zhhhhhhh";
+				}
+				this.value = "hxxxxxxx";
+			};
+			
+		}
+
+		// document.getElementById("btn").onclick = function (){
+		// 	var pObjs = document.getElementsByTagName("p");//得到一个伪数组
+		// 	for (var i = 0; i < pObjs.length; i++) {
+		// 		pObjs[i].innerText = "pppppppppppp";
+		// 	}
+		// };
+
+//伪数组
+		// document.getElementById("btn").onclick = function (){
+		// 	var imgObjs = document.getElementsByTagName("img");
+		// 	imgObjs[0].alt = "zhhhhhh";
+		// 	imgObjs[0].title = "zhhhhhh";
+		// };
+
+		// document.getElementById("btn").onclick = function (){
+		// 	var inputObjs = document.getElementsByTagName("input");	
+		// 	for (var i = 0; i < inputObjs.length; i++) {
+		// 		if(inputObjs[i].type != "button"){
+		// 			inputObjs[i].value = "hxxxxxxxxxx";
+		// 		}
+		// 	}
+		// };
+
+
+		// var btnObj =document.getElementById("btn"); 
+		// btnObj.onclick = function (){
+		// 	this.value = "zhhhhh";
+		// 	this.id = "btn3";
+		// 	this.type = "text";
+		// };
+
+
+
+
+		// document.getElementById("btn").onclick = function(){
+		// 	alert("dom id");
+		// };
+
+		// function fn(){
+		// 	alert("hhhhhhhhhhhhhhhhhhhh");
+		// }
+
+		// var btnObj = document.getElementById("btn2");
+		// btnObj.onclick = fn; //不加括号，只用函数名字
+
+ 	// 	document.getElementById("btn").onclick = function (){
+ 	// 		document.getElementById("p1").innerText = "ppppppppppppppp";
+ 	// 	};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		//BOM 看对象文档
+		//定时器
+		//setTimeout只执行一次
+		// var timeId = setTimeout(function(){
+		// 	console.log("eeeee");
+		// },3000);
+
+		// //取消定时器的执行
+		// clearTimeout(timeId);
+
+		// //setInterval 周期性
+		// var timeId1 = setInterval(function(){
+		// 	var date = new Date();
+		// 	console.log(date);
+		// }, 1000);
+
+		// clearInterval(timeId1);
+
+		// alert(window.location);
+
+		// //DOM
+		// function Element(option){
+		// 	this.id = option.id || '';
+		// 	this.nodeName = option.nodeName || '';
+		// 	this.nodeValue = option.nodeValue || '';
+		// 	this.nodeType = 1;
+		// 	this.children = option.children || [];
+		// }
+		// var doc = new Element({
+		// 	nodeName: 'html';
+		// });
+		// var head = new Element({
+		// 	nodeName: "head";
+		// });
+		// var body = new Element({
+		// 	nodeName: "body";
+		// });
+		// doc.children.push(head);
+		// doc.children.push("body");
+
+		// function getChildren(ele){
+			
+		// }
+		// getChildren(doc);
+
+
+		// console.log("//////////////////////////////");
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>父子组件传值</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+	<!-- 几个注意点：
+	1、子组件中，默认是无法访问到父组件中的data和method的
+	2、子组件中的data数据是属于子组件自己的，可读可写
+	3、父组件传给子组件的数据存放在props属性中，是只读的 
+	4、父组件向子组件传值运用到v-bind
+	父组件向子组件传方法运用到v-on-->
+	<div id="app">
+		<mycom1 :finfo="msg" @func="show"></mycom1>
+	</div>
+	<script>
+		var Vue = new Vue({
+			el: "#app",
+			data: {
+				msg: '我是父组件'
+			},
+			components: {
+				mycom1: {
+					template: '<div><h1>这是子组件----{{ title }}---{{finfo}}</h1><input type="button" value="点他" @click="myClick"/></div>',
+					data(){
+						return {
+							title: '123',
+							content: 'hahhaha'
+						}
+					},
+					methods: {
+						myClick(){
+							// console.log("dddj");
+							this.$emit('func');
+						}
+					},
+					props: ['finfo']
+				}
+			},
+			methods: {
+				show(){
+					console.log("jajjajaajj");
+				}
+			}
+		})
+	</script>
+</body>
+</html>

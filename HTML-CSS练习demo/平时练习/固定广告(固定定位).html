@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ad</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.top {
+			height: 44px;		
+			background: url(images/top.png) no-repeat top center;
+			position: fixed;/*定位模式转换，加了定位之后，默认转换成行内块，行内块的宽高和内容有关，所以如果没内容，我们要加宽高。（绝对定位和固定定位都会模式转换）*/
+			/*而这边是背景图片，而不是插入图片，不算内容*/
+			width: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		.box {
+			margin: 44px auto;/*留出44px，给上面的固定定位*/
+			width: 1002px;/*如果不设置宽度，margin是失效的*/
+		}
+
+		.ad-l, .ad-r {
+			position: fixed;
+			top: 100px;
+		}
+
+		.ad-r {
+			right: 0;
+		}
+	</style>
+</head>
+<body>	
+	<div class="top"></div>
+	<div class="box">
+		<img src="images/box.png">
+	</div>
+
+	
+
+	<!-- img是行内块元素 -->
+	<img src="images/ad-l.png" class="ad-l">
+	<img src="images/ad-r.png" class="ad-r">
+</body>
+</html>
+
+
+
+<!-- 关于定位的叠放次序 -->
+<!-- 一般后来者居上，但是用z-index可以改变次序，数值越大，越在上面 -->

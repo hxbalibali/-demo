@@ -1,0 +1,287 @@
+/*先删除默认的内外边距*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #fafafa;
+}
+
+li {
+	list-style: none;/*取消li前面的小点*/
+}
+
+/*清除浮动*/
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+/*顶部导航栏*/
+.header {
+	height: 100px;
+	background-color: #fff;
+}
+
+.inner {
+	width: 1200px;
+	height: 100px;
+	margin: 0 auto;
+	/*background-color: pink;*/
+	/*设置行高，设置成一样的高度，可以使上下居中*/
+	line-height: 100px;
+}
+/*开始设置左右浮动*/
+.logo {
+	float: left;
+}
+.nav {
+	float: right;
+}
+
+.nav ul{
+	/*border: 1px solid black;*/
+	overflow: hidden;/*父级元素去除浮动*/
+}
+
+.nav li {
+	float: left;
+	margin: 0 20px;
+	/*background-color: red;*/
+}
+
+.nav li a {
+	color: #333;
+	text-decoration: none;
+}
+
+.nav li a:hover {
+	color: #2288f6;
+}
+
+/*banner*/
+.banner {
+	height: 620px;
+	/*background-color: pink;*/
+	background: url(../images/banner.jpg) no-repeat top center;
+}
+
+/*我们的服务*/
+.service, .case {
+	width: 1055px;
+	/*height: 660px;*//*把高度去掉，改用浮动做*/
+	/*background-color: purple;*/
+	margin: 75px auto 0;
+}
+
+.service-hd {
+	border-top: 1px solid #ccc; 
+	/*background-color: pink;*/
+	margin: 0 25px;
+}
+
+.service-hd h3{
+	width: 167px;
+	height: 46px;
+	margin: -15px auto 0;/*使用margin和border 的结合，可以形成横线穿过的效果*/
+}
+
+.service-hd p {
+	width: 830px;
+	font-size: 12px;
+	color: #666;
+	line-height: 26px;
+	text-align: center;
+	margin: 15px auto 0;
+}
+
+
+.service-bd {
+	margin-top: 40px;
+	overflow: hidden;
+}
+
+.service-bd li {
+	width: 320px;
+	height: 510px;
+	background-color: #fff;
+	float: left;	
+	border: 1px solid #e7e8e9;
+}
+.service-bd img {/*img属于行内块元素，可以对其设置宽高以及对齐属性*/
+	margin: 40px 35px;
+	width: 248px;
+	height: 132px;
+}
+
+.service-bd h3 {
+	font-size: 18px;
+	text-align: center;
+	font-weight: normal;
+	/*background-color: pink;*/
+	height: 40px; /*这边设置高度是可以采用剩余高度法，来撑开空隙*/
+}
+
+.service-bd p {
+	font-size: 12px;
+	color: #666;
+	width: 235px;
+	margin: 0 auto;
+	line-height: 26px;
+}
+
+.service-bd a {
+	display: block;/*行内元素变成块级元素可以设置宽高*/
+	border: 1px solid #ff9412;
+	width: 148px;
+	height: 38px;
+	margin: 30px auto 0;
+	text-decoration: none;
+	text-align: center;
+	line-height: 38px;/*文字内容的行高设置成容器的高度，就可以垂直方向上居中*/
+	color: #ff9412;
+	font-size: 12px;
+	border-radius: 5px;/*设置圆角*/
+}
+
+.service-bd a:hover{
+	color: #fff;
+	background-color: #ff9412;
+}
+
+.yingxiao {
+	margin: 0 40px;
+}
+
+.case-bd {
+	margin-top: 80px;
+	position: relative;
+}
+
+.case-bd li {
+	width: 325px;
+	height: 210px;
+	/*background-color: pink;*/
+	float: left;
+	position: relative;
+}
+
+.case-bd-m {
+	margin: 0 40px;
+}
+
+.text {
+	height: 45px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0 , .3);
+	text-align: center;
+	line-height: 45px;
+	color: #fff;
+}
+
+.mask {
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, .5) url(../images/fdj.png) center no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.case-bd li:hover .mask{
+	display: block;
+}
+
+.left, .right {
+	width: 60px;
+	height: 60px;
+	background: rgba(0, 0, 0, .2);
+	position: absolute;/*定位的盒子不用转换成块级元素才能给大小*/
+	top: 50%;
+	margin-top: -30px;
+	text-align: center;
+	line-height: 60px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 25px;
+	border-radius: 50%;
+}
+
+.left {
+	left: -90px;
+}
+
+.right {
+	right: -90px;
+}
+
+.case-bd a:hover {
+	background: rgba(0, 0, 0, .4);
+}
+
+.media-bd li {
+	width: 210px;
+	height: 60px;
+	float: left;
+	border-right: 1px dashed #ccc;
+	border-bottom: 1px dashed #ccc;
+	text-align: center;
+	/*line-height: 80px;/*图片居中不能用这个*/
+	padding-top: 20px;
+}
+
+/*通过一大一小两个父级，将边框切掉*/
+.media-bd {
+	width: 1048px;
+	height: 240px;
+	overflow: hidden;
+	margin-top: 40px;
+}
+
+.media-bd ul {
+	width: 1055px;
+}
+
+/*页面底部*/
+.footer {
+	height: 165px;
+	background-color: #212425;
+	margin-top: 100px;
+	overflow: hidden;/*考虑外边距塌陷的问题*/
+}
+
+.subnav {
+	text-align: center;
+	margin-top: 50px; /*考虑外边距塌陷的问题*/
+	color: #f0f1f1;
+	font-size: 14px;
+}
+
+.subnav a {
+	color: #f0f1f1;
+	text-decoration: none; 
+	padding: 0 5px;
+	font-size: 14px;
+}
+
+.subnav a:hover{
+	color: #2288f6;
+	text-decoration: underline;
+}
+
+.footer p {
+	text-align: center;
+	color: #888888;
+	margin-top: 30px;
+}

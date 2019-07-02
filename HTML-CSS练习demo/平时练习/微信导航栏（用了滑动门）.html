@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>微信导航栏</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		body {
+			background: url(images/wx.jpg) repeat-x;
+		}
+
+
+		.nav li {
+			float: left;
+		}
+		.nav a {
+			text-decoration: none;
+			height: 33px;
+			line-height: 33px;
+			color: #fff;
+			background: url(images/to.png) no-repeat;
+			display: inline-block;
+
+			padding-left: 15px;
+		}
+
+		.nav span {
+			background: url(images/to.png) no-repeat right;
+			padding-right: 15px;
+
+			display: inline-block;
+			height: 33px;
+		}
+
+
+/*		.nav a:hover{
+			background-image: url(images/ao.png);
+		}
+
+		①首先背景图片是不会继承的
+		②鼠标进过a之后，span凹下去
+		③要注意使用background-image，因为这样就不会把background里面除了图片之外的因素盖掉
+		.nav a:hover span{
+			background-image: url(images/ao.png);
+		}*/
+		
+		/*采用并集完善一下*/
+		.nav a:hover, .nav a:hover span{
+			background-image: url(images/ao.png);
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="nav">
+		<li><a href="#"><span>首页</span></a></li>
+		<li><a href="#"><span>帮助与反馈</span></a></li>
+		<li><a href="#"><span>公众平台</span></a></li>
+		<li><a href="#"><span>开放平台</span></a></li>
+		<li><a href="#"><span>微信支付</span></a></li>
+		<li><a href="#"><span>微信网页版</span></a></li>
+		<li><a href="#"><span>表情开放平台</span></a></li>
+		<li><a href="#"><span>微信广告</span></a></li>
+	</ul>
+</body>
+</html>

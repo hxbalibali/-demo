@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+	<style type="text/css">
+		.cls {
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="on/off" id="btn">
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		/*$("#btn").click(function(){
+			if($("body")[0].className == "cls"){
+				$("body")[0].className = "";
+			}else{
+				$("body")[0].className = "cls";
+			}
+		});*/
+
+		$("#btn").click(function(){
+			//判断
+			//应用？
+			if($("body").hasClass("cls")){
+				$("body").removeClass("cls");//移除
+			}else{
+				$("body").addClass("cls");//添加
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sprite</title>
+	<!-- ①为了有效地减少服务器接受和发送请求的次数，提高页面的加载速度，出现了CSS精灵技术，②处理网页背景图像 ③最主要使用background-position -->
+	<!-- 精灵图的坐标是要将图片移动到左顶端的小格子里面，所以一般是负数 -->
+	<style type="text/css">
+		h3 {
+			background: url(images/index.png) no-repeat -2px -184px;
+			width: 26px;
+			height: 26px;
+		}
+
+		div {
+			width: 236px;
+			height: 106px;
+			background: url(images/index.png) no-repeat 0 -350px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 注意：如果没有内容，只有背景图片，是撑不开盒子的，这时候就需要给-->
+	<h3></h3>
+
+	<div></div>
+</body>
+</html>

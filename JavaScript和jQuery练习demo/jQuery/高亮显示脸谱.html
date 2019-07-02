@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+		.wrap {
+			margin: 100px auto 0;
+			border: 1px solid #fff;
+			width: 630px;
+			height: 394px;
+			/*background-color: pink;*/
+			padding: 10px 0 0 10px;
+			background-color: #000;
+		} 
+
+		.wrap li {
+			float: left;
+			margin: 0 10px 10px 0;
+		}
+	</style>
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//获取所有的li，添加鼠标进入事件
+			$(".wrap>ul>li").mouseenter(function(){
+				$(".wrap>ul>li").css("opacity", "0.5");
+				$(this).css("opacity", "1");
+			});
+
+			$(".wrap").mouseleave(function(){
+				$(this).find("li").css("opacity", "1");
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li><a href="#"><img src="images/01.jpg"></a></li>
+			<li><a href="#"><img src="images/02.jpg"></a></li>
+			<li><a href="#"><img src="images/03.jpg"></a></li>
+			<li><a href="#"><img src="images/04.jpg"></a></li>
+			<li><a href="#"><img src="images/05.jpg"></a></li>
+			<li><a href="#"><img src="images/06.jpg"></a></li>
+		</ul>
+	</div>
+</body>
+</html>

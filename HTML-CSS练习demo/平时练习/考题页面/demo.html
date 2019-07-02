@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>考题</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.message {
+			width: 908px;
+			height: 310px;
+			border: 1px solid #ccc;
+			margin: 100px auto; /*上下  左右auto*/
+			padding-left: 30px; /*这样设置会把原先的盒子撑大30px，所以在原先的基础上，宽度减去30px,由938px变成908px*/
+		}
+
+		.message h4 {
+			margin-top: 40px;
+			background-color: pink;
+			height: 37px;/*设置了高度之后，如果不设置内容是否居中显示，内容还是从顶格开始的，这样就是高度剩余法*/
+		}
+		.message h4 a {
+			font-weight: normal;/*不加粗*/
+			color: #f00;/*红色*/
+		}
+		.message textarea {
+			width: 842px;
+			height: 108px;
+			color: #ccc;  /*淡灰色*/
+			padding: 10px; /*同样的，这个也会撑开盒子，所以要减去宽高，变成842和108*/
+		}
+
+		.message input {
+			margin-top: 20px;
+		}
+
+		.message p {
+			color: #f00;
+			font-size: 14px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 有个高度剩余法，可以视觉上用来撑开空隙 -->
+	<div class="message">
+		<h4>评论 <img src="star.png"> <a href="#">我要评论</a></h4>
+        <!-- textarea直接给宽高 -->
+        <textarea>请输入意见</textarea>
+        <input type="image" src="btn.png">
+        <p>暂时没有评论</p>
+	</div>
+</body>
+</html>

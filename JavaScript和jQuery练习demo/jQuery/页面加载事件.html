@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>doc</title>
+	<script src="jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+	<script type="text/javascript">
+	//DOM中页面加载事件
+	window.onload = function() {
+		console.log("hahah");
+	};
+	window.onload = function() {
+		console.log("dsdrrrrrrrrrrrrr");
+	};//会覆盖
+
+	//jquery中第一种页面加载事件
+	$(window).load(function(){
+		console.log("dsdewf");
+	});
+	$(window).load(function(){
+		console.log("ee");
+	});//不会覆盖
+
+	
+
+	
+
+	$(document).ready(function(){
+		console.log("111111");
+	});
+	$(document).ready(function(){
+		console.log("ffff");
+	});
+
+	jQuery(function(){
+		console.log("dsafrgtjukulhi");
+	});
+	jQuery(function(){
+		console.log("hhhhhhhhhhhhhhhhhhhhhhhhhh");
+	});
+
+	$(function(){
+		console.log("dsafrgtjukulhi");
+	});
+
+</script>
+</body>
+</html>

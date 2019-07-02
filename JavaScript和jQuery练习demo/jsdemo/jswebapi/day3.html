@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day3</title>
+</head>
+<body>
+	<div id="dv">哦哦
+  		<span>这是div中的第一个span标签</span>
+  		<p>这是div中的第二个元素,第一个p标签</p>
+  		<ul id="uu">
+    		<li>乔峰</li>
+    		<li>鹿茸</li>
+    		<li id="three">段誉</li>
+    		<li>卡卡西</li>
+    		<li>雏田</li>
+  		</ul>
+	</div>
+	<script type="text/javascript">
+		var ulObj = document.getElementById("uu");
+		console.log(ulObj.parentNode);
+		console.log(ulObj.parentElement);
+
+		console.log(ulObj.childNodes);
+		console.log(ulObj.children);
+
+		console.log(ulObj.firstChild);//子节点
+		console.log(ulObj.firstElementChild);
+
+		console.log(ulObj.lastChild);
+		console.log(ulObj.lastElementChild);
+
+		 console.log(document.getElementById("three").previousSibling);
+  //某个元素的前一个兄弟元素
+  console.log(document.getElementById("three").previousElementSibling);
+  //某个元素的后一个兄弟节点
+  console.log(document.getElementById("three").nextSibling);
+  //某个元素的后一个兄弟元素
+  console.log(document.getElementById("three").nextElementSibling);
+	</script>
+</body>
+</html>

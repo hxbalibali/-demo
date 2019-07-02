@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>滑动门</title>
+	<style type="text/css">
+	/*给a准备左边的顶端，给span准备右边的顶端*/
+		a {
+			margin: 100px;
+			height: 33px;
+			display: inline-block;
+			background: url(images/to.png) no-repeat;
+
+			color: #fff;
+			text-decoration: none;
+			line-height: 33px;
+
+			padding-left: 15px;
+		}
+
+		span {
+			display: inline-block;
+			height: 33px;
+			background: url(images/to.png) no-repeat right;/*span要靠着右对齐*/
+			padding-right:  15px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 结构是a里面包着span -->
+	<a href="#">
+		<span>首页12345667</span>
+	</a>
+</body>
+</html>

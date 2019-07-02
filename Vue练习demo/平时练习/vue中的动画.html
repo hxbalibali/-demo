@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>动画</title>
+	<script src="./lib/vue-2.4.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="./lib/animate.css">
+	<style type="text/css">
+		.v-enter,
+		.v-leave-to {
+			opacity: 0;
+			transform: translateX(150px);
+		}
+
+		.v-enter-active,
+		.v-leave-active {
+			transition: all 0.8s ease;
+		}
+
+
+		/*修改v-前缀*/
+		.my-enter,
+		.my-leave-to {
+			opacity: 0;
+			transform: translateX(700px);
+		}
+
+		.my-enter-active,
+		.my-leave-active {
+			transition: all 0.8s ease;
+		}
+
+		.ball {
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<input type="button" value="toggle不含动画" @click="flag=!flag">
+		<h3 v-if="flag">this is a h3</h3>
+		<br/>
+		<input type="button" value="toggle动画" @click="isshow=!isshow">
+		<transition>
+			<h2 v-if="isshow">this is a h2</h2>
+		</transition>	
+		<br/>
+		<input type="button" value="toggle修改v-前缀" @click="flag1=!flag1">
+		<transition name="my">
+			<h1 v-if="flag1">this is a h1</h1>
+		</transition>
+		<br/>
+		<input type="button" value="toggle引入第三方动画" @click="flag2=!flag2">
+		<transition enter-active-class="fadeInRight" leave-active-class="fadeOutRight" :duration="{ enter:500, leave:800 }">
+			<div v-if="flag2" class="animated">this is a div</div>
+		</transition>
+		<br/>
+		<input type="button" value="toggle使用动画钩子函数" @click="flag3=!flag3">
+		<transition
+			@before-enter="beforeEnter"
+			@enter="enter"
+			@after-enter="afterEnter">
+			<div v-if="flag3" class="ball"></div>
+		</transition>
+	</div>
+	<script>
+		// 动画：1、使用过渡类名(还可以修改v-前缀) 2、使用第三方css动画库 3、使用动画钩子函数 4、列表动画
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				flag: false,
+				isshow: false,
+				flag1: false,
+				flag2: false,
+				flag3: false
+			},
+			methods:{
+				beforeEnter(el){
+					el.style.transform = 'translate(0, 0)'
+				},
+				enter(el, done){
+					el.offsetWidth;
+					el.style.transform="translate(150px,450px)";
+					el.style.transition="all 1s ease";
+					console.log(this.flag3);//true
+					done();
+					console.log(this.flag3);//false
+				},
+				afterEnter(){
+					this.flag3 = !this.flag3;
+					console.log(this.flag3);//false
+				}
+			}
+		})
+	</script>
+</body>
+</html>
