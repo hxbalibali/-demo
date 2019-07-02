@@ -1,0 +1,281 @@
+.jd {
+	position: relative;
+}
+
+.jd-inner {
+	height: 480px;
+	position: relative;
+	z-index: 1;  /*需要将版心放在广告上面，也得加个定位和z-index*/
+}
+
+.ad {
+	height: 480px;
+	background: url(../images/bg.png) no-repeat top center;	/*使广告居中显示*/
+	/*要把广告移到版心的下面，这里用定位来做*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;/*这里需要强制显示宽度，因为“浮动”、“绝对定位”、“固定定位”的盒子会偶行内块转换，大小是根据盒子里面的内容的，这里盒子里面内容是暂时没有的*/
+}
+
+.jd-clo1 {
+	width: 190px;
+	height: 465px;
+	background-color: #6E6568;
+	float: left;
+	padding-top: 15px;
+}
+.jd-clo1 li {
+	padding-left: 10px;
+	height: 28px;
+	line-height: 28px;
+}
+.jd-clo1 li:hover {
+	background-color: #999395;
+}
+
+.jd-clo1 li a {
+	color: #fff;
+	font-size: 14px;
+}
+
+
+.jd-clo1 li span {
+	color: #fff;
+	font-size: 12px;
+}
+
+
+.jd-clo2 {
+	width: 790px;
+	height: 480px;
+	float: left;
+	margin-left: 10px;
+}
+
+
+.jd-clo2-hd {
+	height: 340px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+
+.jd-clo2-bd div {
+	width: 390px;
+	height: 130px;
+	float: left;
+}
+.jd-clo2-bd div img {
+	width: 100%; /*图片过大时，使图片能够自由拉伸*/
+}
+
+.firstPic {
+	margin-right: 10px;
+}
+
+.arr-l, .arr-r {
+	width: 30px;
+	height: 60px;
+	position: absolute; /*加了定位之后a自动变成行内块元素*/
+	top: 50%;
+	margin-top: -30px;
+	background: rgba(0, 0, 0, 0.3);
+	font-family: "icomoon";
+	text-align: center;
+	line-height: 60px;
+	font-size: 25px;
+}
+.arr-l {
+	left: 0;
+}
+.arr-r {
+	right: 0;
+}
+
+.jd-clo2-hd ol {
+	width: 180px;
+	height: 20px;
+	border-radius: 10px;/*一般给高度的一半？*/
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -90px;
+	background: rgba(255, 255,255, 0.3);
+}
+
+.jd-clo2-hd ol li {
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	float: left;
+	margin: 4px 5px;
+	border-radius: 50%;
+}
+
+.jd-clo2-hd .current {
+	background-color: #f10215;
+}
+
+.jd-clo3 {
+	width: 190px;
+	height: 480px;
+	float: right;
+}
+
+
+.user {
+	height: 95px;
+	
+	padding: 20px 15px 0;
+}
+
+/*采用padding来使得文字偏右，然后图片用定位*/
+.user-info {
+	height: 40px;
+	padding-left: 54px;
+	font-size: 12px;
+	color: #747474;
+	line-height: 22px;
+	position: relative;
+}
+
+.user-info a {
+	font-size: 12px;
+	color: #747474;
+}
+.user-info a:hover {
+	color: #f10215;
+}
+
+.info-img {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 50%;/*图片所在父盒子容器圆角*/
+	overflow: hidden;/*截掉多余部分实现*/
+}
+
+.info-img img {
+	width: 100%;
+	height: auto;  /*实现图片自动缩放*/
+}
+
+.user-profit {
+	margin-top: 14px;
+}
+.user-profit a {
+	width: 70px;
+	height: 20px;
+	display: inline-block;
+	border: 2px solid #f10215;
+	font-size: 12px;
+   	color: #f10215;
+   	text-align: center;
+   	line-height: 20px;
+   	margin-right: 3px;
+}
+
+.user-profit a:hover {
+	color: #fff;
+	background-color: #f10215;
+}
+.news {
+	height: 149px;
+
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 15px 0;
+
+}
+
+.tab-hd {
+	border-bottom: 1px solid #ccc;
+	padding: 3px 0;
+
+	font-size: 12px;
+	color: #747474;
+	position: relative;
+}
+
+.tab-hd a {
+	margin: 0 4px;
+	color: #747474;
+}
+
+.cuxiao {
+	border-right: 1px solid #ccc;
+	padding-right: 10px;
+}
+
+.news .more1 {
+	position: absolute;
+	top: 3px;
+	right: 0;
+}
+
+.line {
+	width: 28px;
+	height: 2px;
+	background-color: #f10215;
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+}
+
+.tab-bd {
+	margin-top: 10px;
+	font-size: 12px;
+	color: #747474;
+}
+.tab-bd li {
+	height: 23px;
+	line-height: 23px;
+}
+
+.tab-bd li a {
+	color: #747474;
+}
+
+
+
+.jd-service {
+	height: 209px;
+	width: 190px;
+	overflow: hidden;
+	font-size: 12px;
+	color: #747474;
+}
+
+.jd-service ul {
+	width: 195px;/*估计好大小，使得li上浮正好四个*/
+}
+
+.jd-service li {
+	width: 47px;
+	height: 69px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	float: left;
+}
+
+.jd-service li a {
+	width: 100%;
+	height: 100%;/*大小跟父盒子一样大*/
+	display: block;
+}
+
+.jd-service i {
+	/*这里是背景图片，不算内容，所以要给父容器一个宽高*/
+	width: 24px;
+	height: 24px;
+	display: block;
+	background: url(../images/sprite_fs@1x.png) no-repeat;
+	margin: 15px auto 8px;
+}
+
+.jd-service  p {
+	text-align: center;
+}
